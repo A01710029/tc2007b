@@ -1,5 +1,8 @@
 package com.example.tc2007b.data.network
 
+import com.example.tc2007b.data.network.model.ApiResponse
+import com.example.tc2007b.data.network.model.Character
+
 class DragonBallApiClient() {
 
     private val api: DragonBallAPIService = NetworkModuleDI()
@@ -12,15 +15,16 @@ class DragonBallApiClient() {
 
         return try {
             do {
-                val response = api.getCharacters(page = currentPage, limit = limit)
-                allCharacters.addAll(response.data)  // Add characters to the list
-                totalPages = response.meta.totalPages  // Get total pages from meta
+                val response: ApiResponse = api.getCharacters(page = currentPage, limit = limit)
+                allCharacters.addAll(response.items)
+                totalPages = response.meta.totalPages
                 currentPage++
             } while (currentPage <= totalPages)
 
             allCharacters  // Return the full list of characters
         } catch (e: Exception) {
             e.printStackTrace()
-            null  // Return null in case of an error
+            null
         }
     }
+}
