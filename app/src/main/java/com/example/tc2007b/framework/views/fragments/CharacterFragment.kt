@@ -4,6 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Adapter
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
@@ -25,6 +28,7 @@ class CharacterFragment: Fragment() {
 
     private lateinit var recyclerView: RecyclerView
     private var items:List<CharacterBase> = emptyList()
+    private var filteredItems:List<CharacterBase> = emptyList()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -44,6 +48,22 @@ class CharacterFragment: Fragment() {
         return root
     }
 
+    private fun setUpSpinnerAff(){
+        val affiliations = listOf("All", "Z Fighter", "Army of Frieza", "Freelancer", "Other", "Villain", "Assistant of Beerus", "Pride Troopers", "Assistant of Vermoud")
+        val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, affiliations)
+        binding.spinnerAff.adapter = adapter
+        binding.spinnerAff.setSelection(0)
+
+        binding.spinnerAff.onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id:Long){
+                filterList(affiliations[position])
+            }
+
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+            }
+        }
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
@@ -55,6 +75,7 @@ class CharacterFragment: Fragment() {
         recyclerView.adapter = adapter
         val columnas = 2
         recyclerView.layoutManager = GridLayoutManager(requireContext(), columnas)
+        setUpSpinnerAff()
     }
 
     private fun initializeObservers(){
@@ -68,5 +89,14 @@ class CharacterFragment: Fragment() {
 
     private fun setUpRecyclerView(dataForList: List<CharacterBase>) {
         adapter.updateItems(dataForList)
+    }
+
+    private fun filterList(selectedAff: String) {
+        filteredItems = if (selectedAff == "All") {
+            items
+        } else {
+            items.filter { it.affiliation == selectedAff }
+        }
+        setUpRecyclerView(filteredItems)
     }
 }

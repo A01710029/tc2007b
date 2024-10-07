@@ -4,9 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Spinner
+        android:id="@+id/spinnerAff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/RVCharacters">
+        android:id="@+id/RVCharacters"
+        android:layout_below="@id/spinnerAff">
     </androidx.recyclerview.widget.RecyclerView>
 </RelativeLayout>
