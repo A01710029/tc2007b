@@ -17,7 +17,7 @@ import com.example.tc2007b.framework.viewmodel.DragonBallViewModel
 import com.example.tc2007b.data.network.model.Character
 
 class MainActivity: AppCompatActivity() {
-    private var binding: MainActivityBinding? = null
+    private lateinit var binding: MainActivityBinding
 
     private lateinit var viewModel: DragonBallViewModel
 
@@ -29,20 +29,19 @@ class MainActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = MainActivityBinding.inflate(layoutInflater)
-        setContentView(binding!!.root)
+        setContentView(binding.root)
 
         viewModel = ViewModelProvider(this).get(DragonBallViewModel::class.java)
 
-        // Initialize your list
         items = mutableListOf()
 
-        // Call any initialization methods
         initializeComponents()
+        setUpRecyclerView(listOf())
         viewModel.getAllCharacters()
     }
 
-    private fun initializeComponents(root: View){
-        recyclerView = root.findViewById(R.id.RVCharacters)
+    private fun initializeComponents(){
+        recyclerView = binding.RVCharacters
     }
 
     private fun setUpRecyclerView(dataForList:List<Character>){
@@ -53,7 +52,7 @@ class MainActivity: AppCompatActivity() {
             GridLayoutManager.VERTICAL,
             false)
         recyclerView.layoutManager = gridLayoutManager
-        adapter.DragonBallAdapter(dataForList,requireContext())
+        adapter.DragonBallAdapter(dataForList, this)
         recyclerView.adapter = adapter
     }
 }
