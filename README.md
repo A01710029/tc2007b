@@ -1,2 +1,2 @@
-# tc2007b
-Aplicación para el examen de DAM (Móviles) de la materia TC2007B.
+Paulina Fernanda Almada Martínez - A01710029
+Android Studio : Kotlin
