@@ -53,7 +53,8 @@ class CharacterFragment: Fragment() {
         recyclerView = binding.RVCharacters
         adapter = DragonBallAdapter(emptyList(), requireContext())
         recyclerView.adapter = adapter
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        val columnas = 2
+        recyclerView.layoutManager = GridLayoutManager(requireContext(), columnas)
     }
 
     private fun initializeObservers(){

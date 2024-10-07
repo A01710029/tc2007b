@@ -10,4 +10,9 @@
 
     <color name="semiBlack">#212121</color>
     <color name="semiWhite">#FAFAFA</color>
+    <color name="orange">#FF9922</color>
+    <color name="orangeDark">#E76A24</color>
+    <color name="blue">#1C4595</color>
+    <color name="blueDark">#072083</color>
+    <color name="yellow">#FBBC42</color>
 </resources>
