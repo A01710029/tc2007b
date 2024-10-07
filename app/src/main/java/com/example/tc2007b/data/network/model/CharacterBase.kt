@@ -2,7 +2,7 @@ package com.example.tc2007b.data.network.model
 
 import com.google.gson.annotations.SerializedName
 
-data class Character(
+data class CharacterBase(
     @SerializedName("id") val id: Int,
     @SerializedName("name") val name: String,
     @SerializedName("ki") val ki: String,
@@ -12,5 +12,5 @@ data class Character(
     @SerializedName("description") val description: String,
     @SerializedName("image") val image: String,
     @SerializedName("affiliation") val affiliation: String,
-    @SerializedName("planet") val planet: ArrayList<Planet>
+    @SerializedName("originPlanet") val originPlanet: OriginPlanet?
 )

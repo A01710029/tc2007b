@@ -8,11 +8,11 @@ import com.bumptech.glide.Priority
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import com.example.tc2007b.databinding.ItemCharacterBinding
-import com.example.tc2007b.data.network.model.Character
+import com.example.tc2007b.data.network.model.CharacterBase
 
 class DragonBallViewHolder
     (private val binding: ItemCharacterBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: Character, context: Context){
+        fun bind(item: CharacterBase, context: Context){
             binding.TVName.text = item.name
             binding.TVDescription.text = item.description
             binding.TVKi.text = item.ki
@@ -20,7 +20,6 @@ class DragonBallViewHolder
             binding.TVRace.text = item.race
             binding.TVGender.text = item.gender
             binding.TVAffiliation.text = item.affiliation
-            binding.TVPlanetName.text = item.planet[1].name
 
             getImage(item.image, binding.IVPhoto, binding.root.context)
         }
