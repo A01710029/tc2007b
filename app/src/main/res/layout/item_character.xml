@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:padding="4dp"
+    android:id="@+id/LLPokemon">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@mipmap/ic_launcher"
+            android:layout_gravity="center"
+            android:id="@+id/IVPhoto"
+            />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_marginTop="16dp"
+                android:text="Nombre"
+                android:id="@+id/TVName"
+                android:textAllCaps="true"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_marginTop="16dp"
+                android:text="Description: "
+                android:id="@+id/TVDescription"
+                android:textAllCaps="true"
+                />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_marginTop="16dp"
+                android:text="Ki: "
+                android:id="@+id/TVKi"
+                android:textAllCaps="true"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_marginTop="16dp"
+                android:text="MaxKi: "
+                android:id="@+id/TVMaxKi"
+                android:textAllCaps="true"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_marginTop="16dp"
+                android:text="Race: "
+                android:id="@+id/TVRace"
+                android:textAllCaps="true"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_marginTop="16dp"
+                android:text="Gender: "
+                android:id="@+id/TVGender"
+                android:textAllCaps="true"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_marginTop="16dp"
+                android:text="Affiliation: "
+                android:id="@+id/TVAffiliation"
+                android:textAllCaps="true"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_marginTop="16dp"
+                android:text="Planet: "
+                android:id="@+id/TVPlanet"
+                android:textAllCaps="true"
+                />
+    </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
