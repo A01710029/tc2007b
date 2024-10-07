@@ -8,7 +8,7 @@ class DragonBallListRequirement {
 
     private val repository = DragonBallRepository()
 
-    suspend operator fun invoke(): CharacterObject? {
+    suspend operator fun invoke(): List<Character>? {
             return repository.getAllCharacters()
         }
     }

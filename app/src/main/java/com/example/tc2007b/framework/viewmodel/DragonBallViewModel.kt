@@ -12,15 +12,15 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class DragonBallViewModel: ViewModel() {
-    val characterObjectLiveData = MutableLiveData<CharacterObject?>()
+    val characterListLiveData = MutableLiveData<List<Character>?>()
     private val dragonballListRequirement = DragonBallListRequirement()
 
     fun getAllCharacters(){
         viewModelScope.launch(Dispatchers.IO){
-            val result: CharacterObject? = dragonballListRequirement()
-            Log.d("Salida", result?.count.toString())
+            val result: List<Character>? = dragonballListRequirement()
+            Log.d("Salida", result?.size.toString())
             CoroutineScope(Dispatchers.Main).launch {
-                characterObjectLiveData.postValue(result)
+                characterListLiveData.postValue(result)
             }
         }
     }
