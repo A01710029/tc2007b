@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.tc2007b.R
 import com.example.tc2007b.data.network.model.CharacterBase
 import com.example.tc2007b.databinding.FragmentCharacterBinding
 import com.example.tc2007b.databinding.MainActivityBinding
@@ -51,6 +52,7 @@ class CharacterFragment: Fragment() {
     private fun setUpSpinnerAff(){
         val affiliations = listOf("All", "Z Fighter", "Army of Frieza", "Freelancer", "Other", "Villain", "Assistant of Beerus", "Pride Troopers", "Assistant of Vermoud")
         val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, affiliations)
+
         binding.spinnerAff.adapter = adapter
         binding.spinnerAff.setSelection(0)
 
